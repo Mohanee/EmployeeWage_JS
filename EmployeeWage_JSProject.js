@@ -63,3 +63,11 @@ console.log("Total Emp Wage = "+totalEmpWage +" Total Working Days: "+(totalWork
         " Total Hrs: "+totalEmpHrs);
 
 
+//UC7.1 Calculate Total Wage using DailWageArray
+let totalWagefromArray=0;
+function sum(dailyWage)
+{
+    totalWagefromArray += dailyWage;
+}
+empDailyWageArray.forEach(sum);
+console.log("Total Wage from Array Helper Function "+totalWagefromArray);
