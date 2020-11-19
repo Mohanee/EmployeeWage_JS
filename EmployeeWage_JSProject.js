@@ -48,6 +48,9 @@ let totalWorkingDays =0;
 //UC6 Add daily wages to array
 let empDailyWageArray = new Array();
 
+//UC8 Store day and daily wage along with TotalWage
+let TotalWageDailyWageMap = new Map();
+
 //const WORKING_DAYS = 5;
 while(totalEmpHrs <= MAX_WORK_HRS && totalWorkingDays<= MAX_WORK_DAYS)
 {
@@ -56,6 +59,7 @@ while(totalEmpHrs <= MAX_WORK_HRS && totalWorkingDays<= MAX_WORK_DAYS)
     let empHrs = getWorkingHours(empCheck);
     empDailyWageArray.push(CalculateDailyWage(empHrs));
     totalEmpHrs += empHrs;
+    TotalWageDailyWageMap.set(totalWorkingDays, CalculateDailyWage(empHrs));
 }
 
 let totalEmpWage = CalculateDailyWage(totalEmpHrs);
@@ -120,3 +124,7 @@ function FindWorkingDays(numberOfDays, dailyWage)
     return numberOfDays;
 }
 console.log("Employee Worked for "+empDailyWageArray.reduce(FindWorkingDays,0)+" days");
+
+console.log(TotalWageDailyWageMap);
+//Computing total wage using map
+console.log("Total wage of Employee is : "+ Array.from(TotalWageDailyWageMap.values()).reduce(totalWages,0));
