@@ -96,3 +96,6 @@ function fullTimeWage(dailyWage)
 let fullWageDays= MappedDailyWage.filter(fullTimeWage);
 console.log("Full Wage Days : ");
 console.log(fullWageDays);
+
+//UC7.4 First occurence of Full time wage in the array
+console.log("First occurence of full time wage: "+MappedDailyWage.find(fullTimeWage));
