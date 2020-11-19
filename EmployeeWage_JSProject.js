@@ -85,4 +85,14 @@ function dailyWageMapping(dailyWage)
     return((++dayCount) + " = "+dailyWage);
 }
 let MappedDailyWage = empDailyWageArray.map(dailyWageMapping);
+console.log("Day wise Wage");
 console.log(MappedDailyWage);
+
+//UC7.3 Days when full time wage is 160
+function fullTimeWage(dailyWage)
+{
+    return dailyWage.includes("160");
+}
+let fullWageDays= MappedDailyWage.filter(fullTimeWage);
+console.log("Full Wage Days : ");
+console.log(fullWageDays);
