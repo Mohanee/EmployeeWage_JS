@@ -71,3 +71,18 @@ function sum(dailyWage)
 }
 empDailyWageArray.forEach(sum);
 console.log("Total Wage from Array Helper Function "+totalWagefromArray);
+//reduce function
+function totalWages(totalWage,dailyWage)
+{
+    return totalWage+dailyWage;
+}
+console.log("Using reduce functions "+empDailyWageArray.reduce(totalWages,0));
+
+//UC7.2 Mapping Day to DailyWage
+let dayCount=0;
+function dailyWageMapping(dailyWage)
+{
+    return((++dayCount) + " = "+dailyWage);
+}
+let MappedDailyWage = empDailyWageArray.map(dailyWageMapping);
+console.log(MappedDailyWage);
