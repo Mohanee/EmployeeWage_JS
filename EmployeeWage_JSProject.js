@@ -34,13 +34,16 @@ function getWorkingHours(empCheck)
 }
 
 //UC4 Monthly Wage Calculation
-
-let empHrs =0;
-const WORKING_DAYS = 5;
-for(let days=0; days<WORKING_DAYS;days++)
+const MAX_WORK_HRS= 160;
+const MAX_WORK_DAYS = 20;
+let totalEmpHrs =0;
+let totalWorkingDays =0;
+//const WORKING_DAYS = 5;
+while(totalEmpHrs <= MAX_WORK_HRS && totalWorkingDays<= MAX_WORK_DAYS)
 {
-    empCheck = Math.floor(Math.random()*10) %3;
-    empHrs= getWorkingHours(empCheck);
+    totalWorkingDays++;
+    let empCheck = Math.floor(Math.random()*10) %3;
+    totalEmpHrs += getWorkingHours(empCheck);
 }
 let empWage = empHrs*WAGE_PERHOUR;
 console.log("Emp Wage = "+empWage + "Total Hrs: "+empHrs);
