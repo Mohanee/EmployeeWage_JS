@@ -102,3 +102,11 @@ console.log("First occurence of full time wage: "+MappedDailyWage.find(fullTimeW
 
 //UC7.5 Check If all elements of FullWagedDays array contains full time wage
 console.log("Does all elements of FullWagedDays array contains full time wage :" +fullWageDays.every(fullTimeWage));
+
+//UC7.6 Check if there is any part time Wage
+function isAnyPartTimeWage(dailyWage)
+{
+    return dailyWage.includes("80");
+}
+console.log("Is there any part time wage in FullWageDays Array : "+ fullWageDays.some(isAnyPartTimeWage));
+console.log ("Is there any part time wage in MappedDailyWage Array : "+ MappedDailyWage.some(isAnyPartTimeWage));
