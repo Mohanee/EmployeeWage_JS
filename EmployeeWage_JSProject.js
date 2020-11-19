@@ -68,36 +68,40 @@ console.log("Total Emp Wage = "+totalEmpWage +" Total Working Days: "+(totalWork
 
 
 //UC7.1 Calculate Total Wage using DailWageArray
+
+//sum function using arrow function
 let totalWagefromArray=0;
-function sum(dailyWage)
-{
-    totalWagefromArray += dailyWage;
-}
-empDailyWageArray.forEach(sum);
+                /*function sum(dailyWage)
+                {
+                    totalWagefromArray += dailyWage;
+                }*/
+empDailyWageArray.forEach(function(dailyWage){totalWagefromArray += dailyWage});
 console.log("Total Wage from Array Helper Function "+totalWagefromArray);
-//reduce function
-function totalWages(totalWage,dailyWage)
-{
-    return totalWage+dailyWage;
-}
-console.log("Using reduce functions "+empDailyWageArray.reduce(totalWages,0));
+
+//reduce function using Arrow Function
+                /*function totalWages(totalWage,dailyWage)
+                {
+                    return totalWage+dailyWage;
+                }*/
+console.log("Using reduce functions "+empDailyWageArray.reduce(function(totalWage, dailyWage){ return totalWage+dailyWage},0));
+
 
 //UC7.2 Mapping Day to DailyWage
 let dayCount=0;
-function dailyWageMapping(dailyWage)
-{
-    return((++dayCount) + " = "+dailyWage);
-}
-let MappedDailyWage = empDailyWageArray.map(dailyWageMapping);
-console.log("Day wise Wage");
+                /*function dailyWageMapping(dailyWage)
+                {
+                    return((++dayCount) + " = "+dailyWage);
+                }*/
+let MappedDailyWage = empDailyWageArray.map(function(dailyWage){return ((++dayCount) + " = "+dailyWage)});
+console.log("Day wise Wage : ");
 console.log(MappedDailyWage);
 
 //UC7.3 Days when full time wage is 160
-function fullTimeWage(dailyWage)
-{
-    return dailyWage.includes("160");
-}
-let fullWageDays= MappedDailyWage.filter(fullTimeWage);
+                /*function fullTimeWage(dailyWage)
+                {
+                    return dailyWage.includes("160");
+                }*/
+let fullWageDays= MappedDailyWage.filter(function(dailyWage){ return dailyWage,includes("160")});
 console.log("Full Wage Days : ");
 console.log(fullWageDays);
 
@@ -116,13 +120,15 @@ console.log("Is there any part time wage in FullWageDays Array : "+ fullWageDays
 console.log ("Is there any part time wage in MappedDailyWage Array : "+ MappedDailyWage.some(isAnyPartTimeWage));
 
 //UC7.7 Find number of working days using ArrayHelper Function
-function FindWorkingDays(numberOfDays, dailyWage)
+/*function FindWorkingDays(numberOfDays, dailyWage)
 {
     if(dailyWage>0)
         return (numberOfDays+1);
     
     return numberOfDays;
-}
+}*/
+let numberOfDays=0;
+let FindWorkingDays(dailyWage) => {(dailyWage>0) ? return(numberOfDays+1) : return(numberOfDays);}
 console.log("Employee Worked for "+empDailyWageArray.reduce(FindWorkingDays,0)+" days");
 
 console.log(TotalWageDailyWageMap);
