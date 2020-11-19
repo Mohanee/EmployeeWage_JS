@@ -18,21 +18,22 @@ const PARTTIME_HOURS=4;
 const FULLTIME_HOURS=8;
 const WAGE_PERHOUR=20;
 
+function getWorkingHours(empCheck)
+{
+    switch(empCheck)
+    {
+        case IS_PARTTIME :
+            return PARTTIME_HOURS;
+        
+        case IS_FULLTIME :
+            return FULLTIME_HOURS;
+            
+        default:
+            return 0;
+    }
+}
 let empHrs =0;
 empCheck = Math.floor(Math.random()*10) %3;
-switch(empCheck)
-{
-    case IS_PARTTIME :
-        empHrs = PARTTIME_HOURS;
-        break;
-    
-    case IS_FULLTIME :
-        empHrs= FULLTIME_HOURS;
-        break;
-        
-    default:
-        empHrs=0;
-}
-
+empHrs= getWorkingHours(empCheck);
 let empWage = empHrs*WAGE_PERHOUR;
 console.log("Emp Wage per day = "+empWage);
