@@ -10,3 +10,29 @@ if(empCheck == IS_ABSENT)
 else{
     console.log("Employee is present");
 }
+
+//UC2 DailyWage Calculation based on Part Time or Full Time
+const IS_FULLTIME=2;
+const IS_PARTTIME=1;
+const PARTTIME_HOURS=4;
+const FULLTIME_HOURS=8;
+const WAGE_PERHOUR=20;
+
+let empHrs =0;
+empCheck = Math.floor(Math.random()*10) %3;
+switch(empCheck)
+{
+    case IS_PARTTIME :
+        empHrs = PARTTIME_HOURS;
+        break;
+    
+    case IS_FULLTIME :
+        empHrs= FULLTIME_HOURS;
+        break;
+        
+    default:
+        empHrs=0;
+}
+
+let empWage = empHrs*WAGE_PERHOUR;
+console.log("Emp Wage per day = "+empWage);
