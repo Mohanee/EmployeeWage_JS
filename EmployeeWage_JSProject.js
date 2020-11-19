@@ -99,3 +99,6 @@ console.log(fullWageDays);
 
 //UC7.4 First occurence of Full time wage in the array
 console.log("First occurence of full time wage: "+MappedDailyWage.find(fullTimeWage));
+
+//UC7.5 Check If all elements of FullWagedDays array contains full time wage
+console.log("Does all elements of FullWagedDays array contains full time wage :" +fullWageDays.every(fullTimeWage));
